@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Profit Calculator</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel='shortcut icon' href='images/favicon2.ico' type='image/x-icon'/ >
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<section id="header">
+				<header class="major">
+					<h1>Stock Profit Calc</h1>
+					<p>Tool I made so you can see your weekly Profits</p>
+				</header>
+				<div class="container">
+					<ul class="actions">
+						<li><a href="#one" class="button special scrolly">Begin</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main special">
+				<div class="container">
+					<div class="content">
+						<header class="major">
+							<h2>Select your Account</h2>
+						</header>
+					<ul class="actions">
+						<li><a href="#two" class="button special scrolly">American Express Profits</a></li>
+					</ul> or<br><br>
+					<ul class="actions">
+						<li><a href="#three" class="button special scrolly">Bank Account Profits</a></li>
+					</ul>
+					</div>
+					<!--a href="#two" class="goto-next scrolly">Next</a-->
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="main special">
+				<div class="container">
+					<div class="content">
+						<header class="major">
+							<h2>American Express Profits</h2>
+						</header>
+						<p><a href="https://secure.serve.com/Login?intlink=us-serve-marketing-home-home-amexsku2016-header-login" target="_blank">Login to your serve.com account</a> and type in each of your sales here to see your paycheck for this week. Hit "Submit" to send me an email notification about your Profits!</p>
+						
+						<p><input type="number" id="input1" placeholder="Type Numbers Here..." onkeyup="func()" /></p>
+
+						<a class="button special scrolly" onclick="add1()">Add More</a>
+						<a class="button special scrolly" onclick="clear1()">Clear Data</a>
+						<a class="button special scrolly" onclick="submit1()">Submit!</a>
+						<h1><br><br><br><label id="showtext" value="123"></label></h1>
+<br><br><br><br><br><br><br><br>
+					</div>
+					<!--a href="#three" class="goto-next scrolly">Next</a-->
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="main special">
+				<div class="container">
+					<div class="content">
+						<header class="major">
+							<h2>Bank Account Profits</h2>
+						</header>
+						<p>Log into your Bank Account's website and type in each of your deposit sales here to see your paycheck for this week. Then click "Submit" to send me an email about your Profits!</p>
+						
+						<p><input type="number" id="input2" placeholder="Type Numbers Here..." onkeyup="func2()" /></p>
+
+						<a class="button special scrolly" onclick="add2()">Add More</a>
+						<a class="button special scrolly" onclick="clear2()">Clear Data</a>
+						<a class="button special scrolly" onclick="submit2()">Submit!</a>
+						<h1><br><br><br><label id="showtext2" value="123"></label></h1>
+<br><br><br><br><br><br><br><br>
+					</div>
+					<!--a href="#three" class="goto-next scrolly">Next</a-->
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<header class="major">
+						<h2>Personal Message</h2>
+					</header>
+					<form method="post" action="#">
+						<div class="row uniform">
+							<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
+							<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
+							<div class="12u$"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+							<div class="12u$">
+								<ul class="actions">
+									<li><input type="submit" value="Send Email" class="special" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+				<footer>
+					<ul class="icons">
+						<li><a class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a class="icon alt fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Custom: <a >Profit Calculator</a></li><li>HTML Coding: <a >Custom Coded</a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script>
+			// variables for optional 1
+			var string1number="SALES: ";
+			var string1total="<br><br>  PROFIT: $";
+			var val1=0;
+			var tot1=0;
+			parseFloat(Math.round(tot1 * 100) / 100).toFixed(2);
+			var totalstring=parseFloat(Math.round(tot1 * 100) / 100).toFixed(2);
+			
+
+			// methods for optional 1
+			function func()
+			{
+				document.getElementById('showtext').innerHTML="";
+				// alert(document.getElementById('input1').value);
+				var total=tot1;
+				
+				val1=parseInt(document.getElementById('input1').value);
+				total=parseInt(total+val1);
+				if(document.getElementById('input1').value!=""){
+					var string1number1= string1number+val1;
+					var string1total1=string1total+parseFloat(Math.round(total * 4.5) / 100).toFixed(2);
+					// Number(total).toFixed(2);
+					
+					document.getElementById('showtext').innerHTML = string1number1+string1total1;
+					totalstring2=string1number1+string1total1;
+					totalstring=parseFloat(Math.round(totalstring2 * 100) / 100).toFixed(2);
+				}
+				else{
+					var string1number1=string1number.substring(0, string1number.length-1);
+					var string1total1=string1total+tot1;
+					parseFloat(Math.round(string1total1 * 100) / 100).toFixed(2);
+					document.getElementById('showtext').innerHTML = string1number1+string1total1;
+					totalstring2=string1number1+string1total1;
+					totalstring=parseFloat(Math.round(totalstring2 * 100) / 100).toFixed(2);
+				}
+
+				
+				
+			}
+			function add1(){
+
+				if (document.getElementById('input1').value!="" ){
+					string1number=string1number+val1+", "
+					tot1=parseInt(tot1+val1);
+					document.getElementById('input1').value=""
+				}
+				
+			}
+			function clear1()
+			{
+				val1=0;
+				tot1=0;
+				string1number="SALES: ";
+				string1total="<br><br>  PROFIT: $";
+				document.getElementById('showtext').innerHTML=""
+				document.getElementById('input1').value=""
+			}
+			function submit1(){
+
+				// totalstring="Option #1. "+totalstring;
+				// 	var link = "mailto:test333@mailinator.com"
+		  //            + "?cc=myCCaddress@example.com"
+		  //            + "&subject=" + escape("Option#1")
+		  //            + "&body=" + escape(totalstring)
+   			// 				 ;
+
+	  	 	// 		 window.location.href = link;
+	  	 		
+	  	 		alert("Email has been sent to me! I'll verify these numbers and send your profits to you by the end of the week! Text or Facebook me anytime also")
+	  	 		
+			}
+
+
+			// variables for optional 2
+			var string2number="SALES: ";
+			var string2total="<br><br>  PROFIT: $";
+			var val2=0;
+			var tot2=0;
+			parseFloat(Math.round(tot2 * 100) / 100).toFixed(2);
+			var totalstring_2=parseFloat(Math.round(totalstring_2 * 100) / 100).toFixed(2);
+
+			// methods for optional 2
+			function func2()
+			{
+				document.getElementById('showtext2').innerHTML="";
+				// alert(document.getElementById('input1').value);
+				var total=tot2;
+				
+				val2=parseInt(document.getElementById('input2').value);
+				total=parseInt(total+val2);
+				if(document.getElementById('input2').value!=""){
+					var string2number1= string2number+val2;
+					var string2total1=string2total+parseFloat(Math.round(total * 2.5) / 100).toFixed(2);;
+					// Number(total).toFixed(2);
+					
+					document.getElementById('showtext2').innerHTML = string2number1+string2total1;
+					totalstring2=string2number1+string2total1;
+					totalstring_2=parseFloat(Math.round(totalstring2 * 100) / 100).toFixed(2);
+				}
+				else{
+					var string2number1=string2number.substring(0, string2number.length-1);
+					var string2total1=string2total+tot2;
+					parseFloat(Math.round(string2total1 * 100) / 100).toFixed(2);
+					document.getElementById('showtext').innerHTML = string2number1+string2total1;
+					totalstring2=string2number1+string2total1;
+					totalstring_2=parseFloat(Math.round(totalstring2 * 100) / 100).toFixed(2);
+				}
+
+				
+				
+			}
+			function add2(){
+
+				if (document.getElementById('input2').value!="" ){
+					string2number=string2number+val2+", "
+					tot2=parseInt(tot2+val2);
+					document.getElementById('input2').value=""
+				}
+				
+			}
+			function clear2()
+			{
+				val2=0;
+				tot2=0;
+				string2number="SALES: ";
+				string2total="<br><br>  PROFIT: $";
+				document.getElementById('showtext2').innerHTML=""
+				document.getElementById('input2').value=""
+			}
+			function submit2(){
+
+				// totalstring="Option #1. "+totalstring;
+				// 	var link = "mailto:test333@mailinator.com"
+		  //            + "?cc=myCCaddress@example.com"
+		  //            + "&subject=" + escape("Option#1")
+		  //            + "&body=" + escape(totalstring)
+   			// 				 ;
+
+	  	 	// 		 window.location.href = link;
+	  	 		
+	  	 		alert("Email has been sent to me! I'll verify these numbers and send your profits to you by the end of the week! Text or Facebook me anytime also")
+	  	 		
+			}
+
+			</script>
+	</body>
+</html>
